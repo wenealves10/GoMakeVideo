@@ -51,6 +51,7 @@ func main() {
 
 	// testing all setters
 	// v.Trim(0, 10)
+	v.SetStart(0)
 	v.SetSize(500, 500)
 	v.Render("file_modificar.mp4")
 
