@@ -7,7 +7,7 @@ import (
 	"sort"
 
 	"github.com/icza/mjpeg"
-	"github.com/sikang99/cinema"
+	"github.com/jtguibas/cinema"
 )
 
 func main() {
@@ -26,7 +26,7 @@ func main() {
 	checkErr(err)
 	sort.Strings(matches)
 
-	fmt.Println("Found images:", matches)
+	fmt.Println("Imagens encontradas:", matches)
 	for _, name := range matches {
 		data, err := ioutil.ReadFile(name)
 		checkErr(err)
@@ -34,7 +34,7 @@ func main() {
 	}
 
 	checkErr(aw.Close())
-	fmt.Printf("%s was written successfully.\n", outName)
+	fmt.Printf("%s Baixou com sucesso\n", outName)
 
 	// loading the test video
 	// fmt.Println("Downloading Test Video...")
@@ -44,15 +44,15 @@ func main() {
 	// }
 
 	// // initializing the test video as a cinema video object
-	v, err := cinema.MakeVideo("file.mp4")
+	v, err := cinema.Load("file.mp4")
 	if err != nil {
 		fmt.Println(err)
 	}
 
 	// testing all setters
 	// v.Trim(0, 10)
-	v.SetSize(400, 400)
-	v.Render("test_output.mp4")
+	v.SetSize(500, 500)
+	v.Render("file_modificar.mp4")
 
 	// testing all getters
 	fmt.Println(v.Filepath())
