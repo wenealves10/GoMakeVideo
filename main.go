@@ -17,7 +17,7 @@ func main() {
 	}
 
 	outName := "file.mp4"
-	aw, err := mjpeg.New(outName, 144, 108, 2)
+	aw, err := mjpeg.New(outName, 144, 108, 10)
 	checkErr(err)
 
 	// Create a movie from images:
